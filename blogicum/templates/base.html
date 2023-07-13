@@ -1,3 +1,4 @@
+<!-- base.html -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru">
@@ -10,7 +11,28 @@
   </head>
   <body>
     {% include "includes/header.html" %}
-    {% block content %}{% endblock %}
+    {% block content %}
+      <main>
+        <div class="container py-5">
+          <article>
+            <ul>
+              <li>
+                Место: {{post.location}}              
+              </li>
+              <li>
+                Дата: {{post.date}}
+              </li>
+              <li>
+                Категория: <a href="{{post.category}}">{{post.category}}</a>
+              </li>
+            </ul>
+            <p>
+              {{post.text}}
+            </p>
+          </article>
+        </div>
+      </main>
+    {% endblock %}
     {% include "includes/footer.html" %}   
   </body>
 </html>

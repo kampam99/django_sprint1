@@ -1,7 +1,6 @@
-"""
-views
-"""
+
 from django.shortcuts import render
+
 
 posts = [
     {
